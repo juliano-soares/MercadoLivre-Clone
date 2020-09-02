@@ -1,8 +1,18 @@
 import React from 'react';
 
 import tshirtImage from '../../assets/tshirt.png';
+import SallerInfo from '../SellerInfo';
+import ProductAction from '../ProductAction';
 
-import { Container } from './styles';
+import {
+  Container,
+  Row,
+  Panel,
+  Column,
+  Gallery,
+  Section,
+  Description,
+} from './styles';
 
 const Product: React.FC = () => {
   return (
@@ -12,26 +22,44 @@ const Product: React.FC = () => {
         <a href="#">Vender um igual</a>
       </Row>
       <Panel>
-        <Colunm>
+        <Column>
           <Gallery>
             <img src={tshirtImage} alt="T-shirt" />
           </Gallery>
           <Info />
-        </Colunm>
+        </Column>
 
-        <Colunm>
-          {/* <ProductyAction />
-          <SallerInfo /> */}
+        <Column>
+          <ProductAction />
+          <SallerInfo />
           <WarrantySection />
           <WarrantySection />
           <WarrantySection />
-        </Colunm>
+        </Column>
       </Panel>
     </Container>
   );
 };
 
-const Info = () => {
+const WarrantySection = () => (
+  <Section>
+    <h4>Garantia</h4>
+    <div>
+      <span>
+        <p className="title">Compra garantida com o Lorem Ipsum</p>
+        <p className="description">Receba o produto que está esperando ou devolvemos o seu dinheiro</p>
+      </span>
+      <span>
+        <p className="title">Garantida do vendedor</p>
+        <p className="description">sem garantia</p>
+      </span>
+    </div>
+
+    <a href="#">Saiba mais sobre garantia.</a>
+  </Section>
+)
+
+const Info = () => (
   <Description>
     <h2>Descrição</h2>
     <p>
@@ -51,6 +79,6 @@ const Info = () => {
       nisi iste?
     </p>
   </Description>
-}
+)
 
 export default Product;
