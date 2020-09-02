@@ -33,8 +33,6 @@ const Product: React.FC = () => {
           <ProductAction />
           <SallerInfo />
           <WarrantySection />
-          <WarrantySection />
-          <WarrantySection />
         </Column>
       </Panel>
     </Container>
